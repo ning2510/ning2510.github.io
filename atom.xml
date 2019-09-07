@@ -1,20 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>凉生</title>
   
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-09-06T15:43:40.186Z</updated>
+  <updated>2019-09-05T11:38:29.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>凉生</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="http://yoursite.com/2019/09/07/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86/"/>
+    <id>http://yoursite.com/2019/09/07/裴蜀定理/</id>
+    <published>2019-09-07T08:55:16.197Z</published>
+    <updated>2019-09-05T11:38:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="裴蜀定理"><a href="#裴蜀定理" class="headerlink" title="裴蜀定理"></a>裴蜀定理</h3><h4 id="1-内容"><a href="#1-内容" class="headerlink" title="1. 内容 :"></a>1. 内容 :</h4><blockquote><p>在数论中，裴蜀定理是一个关于<strong>最大公约数</strong>（或最大公约式）的定理，裴蜀定理得名于法国数学家艾蒂安·裴蜀。 ——引自百度百科</p></blockquote><p>$$<br>ax+by=c (x∈N^+,y∈N^+)<br>$$</p><p>$$<br>成立的充要条件是{\gcd(a,b)|c}<br>$$</p><p>$$<br>N^+表示正整数集。<br>$$</p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// gcd(a,b)|c:  c % gcd(a,b) == 0</span></span><br></pre></td></tr></table></figure><h4 id="2-证明"><a href="#2-证明" class="headerlink" title="2. 证明"></a>2. 证明</h4><p><strong>证明的话想一下扩展欧几里得就能想出来</strong></p><p><strong>(具体见扩展欧几里得笔记)</strong></p><h4 id="3-代码实现"><a href="#3-代码实现" class="headerlink" title="3. 代码实现"></a>3. 代码实现</h4><p><strong>洛谷 P4549</strong></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b == <span class="number">0</span>) <span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> gcd(b, a % b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">int</span> x, ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">        <span class="keyword">if</span>(x &lt; <span class="number">0</span>) x = -x;</span><br><span class="line">        ans = gcd(ans, x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;裴蜀定理&quot;&gt;&lt;a href=&quot;#裴蜀定理&quot; class=&quot;headerlink&quot; title=&quot;裴蜀定理&quot;&gt;&lt;/a&gt;裴蜀定理&lt;/h3&gt;&lt;h4 id=&quot;1-内容&quot;&gt;&lt;a href=&quot;#1-内容&quot; class=&quot;headerlink&quot; title=&quot;1. 内容 :&quot;&gt;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>

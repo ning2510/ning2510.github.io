@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2F2019%2F09%2F07%2F%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86%2F</url>
-    <content type="text"><![CDATA[裴蜀定理1. 内容 : 在数论中，裴蜀定理是一个关于最大公约数（或最大公约式）的定理，裴蜀定理得名于法国数学家艾蒂安·裴蜀。 ——引自百度百科 $$ax+by=c (x∈N^+,y∈N^+)$$ $$成立的充要条件是{\gcd(a,b)|c}$$ $$N^+表示正整数集。$$ 1// gcd(a,b)|c: c % gcd(a,b) == 0 2. 证明证明的话想一下扩展欧几里得就能想出来 (具体见扩展欧几里得笔记) 3. 代码实现洛谷 P4549 12345678910111213141516171819202122#include &lt;iostream&gt;using namespace std;int n;int gcd(int a, int b) &#123; if(b == 0) return a; else return gcd(b, a % b);&#125;int main() &#123; cin &gt;&gt; n; int x, ans = 0; for(int i = 1; i &lt;= n; i++) &#123; cin &gt;&gt; x; if(x &lt; 0) x = -x; ans = gcd(ans, x); &#125; cout &lt;&lt; ans &lt;&lt; endl; return 0;&#125;]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[Hello World]]></title>
     <url>%2F2019%2F09%2F06%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>

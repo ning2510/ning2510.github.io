@@ -1569,25 +1569,6 @@ article:last-child .post-eof {
   margin: initial;
   text-align: center;
 }
-.posts-expand .post-title .post-edit-link {
-  border-bottom: none;
-  color: #bbb;
-  display: inline-block;
-  float: right;
-  font-size: 1.25em;
-  transition-delay: 0s;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in;
-  margin-left: -1.2em;
-}
-@media (max-width: 567px) {
-  .posts-expand .post-title .post-edit-link {
-    margin-left: initial;
-  }
-}
-.posts-expand .post-title .post-edit-link:hover {
-  color: #000;
-}
 .posts-expand .post-title-link {
   border-bottom: none;
   color: #555;
@@ -1726,7 +1707,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #302bcf;
+  background: #ff83ed;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2408,19 +2389,6 @@ ul.breadcrumb li + li:last-child {
   background: #f9f9f9;
   border-bottom-color: #fff;
 }
-.menu-item-active a::after,
-.menu .menu-item a:hover::after,
-.menu .menu-item span.exturl:hover::after {
-  background-color: #bbb;
-  border-radius: 50%;
-  content: ' ';
-  height: 6px;
-  margin-top: -3px;
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  width: 6px;
-}
 .menu .menu-item {
   display: block;
   margin: 0;
@@ -2491,9 +2459,6 @@ ul.breadcrumb li + li:last-child {
 .sub-menu .menu-item-active a:hover {
   background: #fff;
   border-bottom-color: #fc6423;
-}
-.sub-menu .menu-item-active a::after {
-  content: initial;
 }
 .sidebar {
   bottom: auto;

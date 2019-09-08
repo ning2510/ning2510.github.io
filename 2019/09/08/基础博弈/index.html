@@ -57,13 +57,14 @@
 </script>
 
   <meta name="description" content="基础博弈1. 博弈论的简介　　博弈论是二人或多人在平等的对局中各自利用对方的策略变换自己的对抗策略，达到取胜目标的理论。博弈论是研究互动决策的理论。博弈可以分析自己与对手的利弊关系，从而确立自己在博弈中的优势，因此有不少博弈理论，可以帮助对弈者分析局势，从而采取相应策略，最终达到取胜的目的。博弈的类型分为：合作博弈、非合作博弈、完全信息博弈、非完全信息博弈、静态博弈、动态博弈，等等。 2. 基础概">
+<meta name="keywords" content="Better late than never. 只要开始，虽晚不迟.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基础博弈">
 <meta property="og:url" content="http://yoursite.com/2019/09/08/基础博弈/index.html">
 <meta property="og:site_name" content="凉生">
 <meta property="og:description" content="基础博弈1. 博弈论的简介　　博弈论是二人或多人在平等的对局中各自利用对方的策略变换自己的对抗策略，达到取胜目标的理论。博弈论是研究互动决策的理论。博弈可以分析自己与对手的利弊关系，从而确立自己在博弈中的优势，因此有不少博弈理论，可以帮助对弈者分析局势，从而采取相应策略，最终达到取胜的目的。博弈的类型分为：合作博弈、非合作博弈、完全信息博弈、非完全信息博弈、静态博弈、动态博弈，等等。 2. 基础概">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-08T02:35:30.211Z">
+<meta property="og:updated_time" content="2019-09-08T02:46:27.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础博弈">
 <meta name="twitter:description" content="基础博弈1. 博弈论的简介　　博弈论是二人或多人在平等的对局中各自利用对方的策略变换自己的对抗策略，达到取胜目标的理论。博弈论是研究互动决策的理论。博弈可以分析自己与对手的利弊关系，从而确立自己在博弈中的优势，因此有不少博弈理论，可以帮助对弈者分析局势，从而采取相应策略，最终达到取胜的目的。博弈的类型分为：合作博弈、非合作博弈、完全信息博弈、非完全信息博弈、静态博弈、动态博弈，等等。 2. 基础概">
@@ -230,7 +231,7 @@
                 
               
 
-              <time title="创建时间：2019-09-08 10:34:51 / 修改时间：10:35:30" itemprop="dateCreated datePublished" datetime="2019-09-08T10:34:51+08:00">2019-09-08</time>
+              <time title="创建时间：2019-09-08 10:34:51 / 修改时间：10:46:27" itemprop="dateCreated datePublished" datetime="2019-09-08T10:34:51+08:00">2019-09-08</time>
             </span>
           
             
@@ -259,13 +260,13 @@
 <p>　　<u>求 r=n%(1+m), 判断 r 是否等于 0，如果 r 不等于 0，先手必胜，否则后手必胜</u>。为什么？</p>
 <p>　　我们可以分析一下，对于 n=(1+m) * r+s，如果 s不等于 0 的话，先手取走s，那么总的物品数剩下 (1+m) * r，然后后手取走 k 的话，先手只要取走 1+m-k 的物品，就可以保持 n=(1+m) 的倍数的局面交给对方，这意味着什么？意味着 n=0 的局面最终会被后手得到，那样后手就输了。而如果s等于0的话，那么对于先手取k的物品，后手只要取 1+m-k 个物品就可以将n=0的局面转给先手，先手就输了。</p>
 <p>　　所以这里的必败态是(1+m)的倍数。有没有发现，对于一场博弈来说，所有的必败态都会有相似的地方，就像这里，必败态一定是(1+m)的倍数。</p>
-<p>　　然后再说深一点的巴什博奕：只有一堆n个物品，两个人轮流从这堆物品中取物，规定每次至少取p个，最多取q个，如果剩下的物品数小于p的话需要一次取完。最后取光者得胜。</p>
+<p>　　然后再说深一点的巴什博弈：只有一堆n个物品，两个人轮流从这堆物品中取物，规定每次至少取p个，最多取q个，如果剩下的物品数小于p的话需要一次取完。最后取光者得胜。</p>
 <p>　　这个又怎样求？按照上面的思路，我们可以得到公式n=(p+q)*r+s。</p>
 <p>　　那么这里的s有两种情况①s&gt;=p，②s&lt;p,。</p>
 <p>　　对于①很容易分析，只要先手取走s的话，对于后手去k，先手只要取p+q-k即可保证先手必胜。</p>
 <p>　　对于②，分析起来没有①那么简单，所以这可能就一定需要用后面讲到的用SG值来判断了。</p>
-<p>　　然后在讲一下一个问题。如果条件和基本的巴什博奕基本一样，但是说的是最后谁是无法再取物品的是赢家的话，那该怎么处理呢？</p>
-<p>　　既然是这样，先手只要判断一下能不能将最后一步留给自己就可以了。而最后一步最少也要保留一个物品，所以我们可以将这个问题转化为基本的巴什博奕，只是终点变成一个物品，而不是零个物品。所以判断的条件是(n-1)%(1+m)!=0 ? 先手赢 : 后手赢。</p>
+<p>　　然后在讲一下一个问题。如果条件和基本的巴什博弈基本一样，但是说的是最后谁是无法再取物品的是赢家的话，那该怎么处理呢？</p>
+<p>　　既然是这样，先手只要判断一下能不能将最后一步留给自己就可以了。而最后一步最少也要保留一个物品，所以我们可以将这个问题转化为基本的巴什博弈，只是终点变成一个物品，而不是零个物品。所以判断的条件是(n-1)%(1+m)!=0 ? 先手赢 : 后手赢。</p>
 <p><strong>代码实现</strong> :</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Bash_Game</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> m)</span> </span>&#123;	<span class="comment">//是否先手有必赢策略</span></span><br><span class="line">    <span class="keyword">if</span> (n % (<span class="number">1</span> + m) != <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;  <span class="comment">//先手赢  </span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;  <span class="comment">//后手赢</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -313,6 +314,15 @@
       
 
       <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Better-late-than-never-只要开始，虽晚不迟/" rel="tag"><i class="fa fa-tag"></i> Better late than never. 只要开始，虽晚不迟.</a>
+            
+          </div>
+        
 
         
 
@@ -397,6 +407,15 @@
           <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+        
       </div>
     
   </nav>

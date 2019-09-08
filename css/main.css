@@ -1001,6 +1001,29 @@ pre .javascript .function {
   margin-top: 0;
   padding-top: 0;
 }
+.back-to-top {
+  background: #eee;
+  cursor: pointer;
+  font-size: 12px;
+  margin: 8px -10px -20px;
+  opacity: 0.6;
+  text-align: center;
+  visibility: hidden;
+}
+.back-to-top:hover {
+  opacity: 0.8;
+}
+@media (max-width: 991px) {
+  .back-to-top {
+    display: none;
+  }
+}
+.back-to-top.back-to-top-on {
+  visibility: visible;
+  transition-delay: 0s;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+}
 .reading-progress-bar {
   background: #37c6c0;
   display: block;
@@ -1748,7 +1771,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #5069de;
+  background: #cfffff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;

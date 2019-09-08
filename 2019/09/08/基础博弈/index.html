@@ -31,7 +31,7 @@
     exturl: false,
     sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":true,"style":null},
-    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    back2top: "",
     bookmark: {"enable":true,"color":"#222","save":"auto"},
     fancybox: false,
     mediumzoom: false,
@@ -64,7 +64,7 @@
 <meta property="og:site_name" content="凉生">
 <meta property="og:description" content="基础博弈1. 博弈论的简介　　博弈论是二人或多人在平等的对局中各自利用对方的策略变换自己的对抗策略，达到取胜目标的理论。博弈论是研究互动决策的理论。博弈可以分析自己与对手的利弊关系，从而确立自己在博弈中的优势，因此有不少博弈理论，可以帮助对弈者分析局势，从而采取相应策略，最终达到取胜的目的。博弈的类型分为：合作博弈、非合作博弈、完全信息博弈、非完全信息博弈、静态博弈、动态博弈，等等。 2. 基础概">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-08T12:34:38.577Z">
+<meta property="og:updated_time" content="2019-09-08T12:47:29.209Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础博弈">
 <meta name="twitter:description" content="基础博弈1. 博弈论的简介　　博弈论是二人或多人在平等的对局中各自利用对方的策略变换自己的对抗策略，达到取胜目标的理论。博弈论是研究互动决策的理论。博弈可以分析自己与对手的利弊关系，从而确立自己在博弈中的优势，因此有不少博弈理论，可以帮助对弈者分析局势，从而采取相应策略，最终达到取胜的目的。博弈的类型分为：合作博弈、非合作博弈、完全信息博弈、非完全信息博弈、静态博弈、动态博弈，等等。 2. 基础概">
@@ -181,10 +181,6 @@
     </header>
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
   <div class="reading-progress-bar"></div>
   <a class="book-mark-link book-mark-link-fixed" href="#"></a>
 
@@ -233,7 +229,7 @@
                 
               
 
-              <time title="创建时间：2019-09-08 10:34:51 / 修改时间：20:34:38" itemprop="dateCreated datePublished" datetime="2019-09-08T10:34:51+08:00">2019-09-08</time>
+              <time title="创建时间：2019-09-08 20:46:52 / 修改时间：20:47:29" itemprop="dateCreated datePublished" datetime="2019-09-08T20:46:52+08:00">2019-09-08</time>
             </span>
           
             
@@ -305,8 +301,6 @@
 <p><strong>2. HDU 2176 (每次 取出/剩余 )</strong></p>
 <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2176" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=2176</a></p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; </span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> k[<span class="number">500005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n &amp;&amp; n) &#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; k[i];</span><br><span class="line">            ans ^= k[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!ans) &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"No"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Yes"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>((ans ^ k[i]) &gt;= k[i]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">int</span> t = ans ^ k[i];</span><br><span class="line">            <span class="comment">//t是按照最优的方法取完石子后，剩下的石子</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; k[i] &lt;&lt; <span class="string">' '</span>&lt;&lt; t &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
     </div>
 
     
@@ -331,8 +325,8 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
-                <a href="/2019/09/06/hello-world/" rel="next" title="Hello World">
-                  <i class="fa fa-chevron-left"></i> Hello World
+                <a href="/2019/09/08/Linux下使用-Github-Hexo-搭建私人博客/" rel="next" title="Linux下使用 Github + Hexo 搭建私人博客">
+                  <i class="fa fa-chevron-left"></i> Linux下使用 Github + Hexo 搭建私人博客
                 </a>
               
             </div>
@@ -340,10 +334,6 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-              
-                <a href="/2019/09/08/Linux下使用-Github-Hexo-搭建私人博客/" rel="prev" title="Linux下使用 Github + Hexo 搭建私人博客">
-                  Linux下使用 Github + Hexo 搭建私人博客 <i class="fa fa-chevron-right"></i>
-                </a>
               
             </div>
           </div>

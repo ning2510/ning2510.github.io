@@ -1771,7 +1771,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #085dff;
+  background: #ffc7a8;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2774,8 +2774,10 @@ ul.breadcrumb li + li:last-child {
   }
 }
 body {
-  background-image: url("/images/666.jpg");
+  background-image: url("https://source.unsplash.com/random/1600x900");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 50% 50%;
+  background-size: cover;
+  width: 100%;
 }

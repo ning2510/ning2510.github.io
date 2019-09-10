@@ -1771,7 +1771,7 @@ article:last-child .post-eof {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #03ffff;
+  background: #ffe0df;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2781,10 +2781,10 @@ body {
   background-size: cover;
   width: 100%;
 }
-.main-inner {
-  margin-top: 60px;
-  padding: 60px 60px 60px 60px;
-  background: #fff;
-  opacity: 0.8;
-  min-height: 500px;
-}
+/*.main-inner { 
+    margin-top: 60px;
+    padding: 60px 60px 60px 60px;
+    background: #fff;
+    opacity: 0.8;
+    min-height: 500px;
+}*/

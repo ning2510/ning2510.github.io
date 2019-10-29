@@ -64,24 +64,24 @@
 <meta property="og:site_name" content="凉生">
 <meta property="og:description" content="简介: 割边和割点的定义 仅限于无向图 中。我们可以通过定义以蛮力方式求解出无向图的所有割点和割边, 但这样的求解方式效率低。Tarjan 提出了一种快速求解的方式，通过一次 DFS 就求解出图中所有的割点和割边">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/9k4fknpl.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/esh55tms.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/dkupkca3.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/4uy6wfwa.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/41rj0hj1.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/epfo9xsc.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/a0esog84.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/ab1zybnp.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/zks1mvwi.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/glpr0yty.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/7gmam1wf.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/8c5skax7.png">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/n8to9hp4.png">
-<meta property="og:updated_time" content="2019-10-29T09:21:24.858Z">
+<meta property="og:image" content="https://ning2510.github.io/images/1.png">
+<meta property="og:image" content="https://ning2510.github.io/images/2.png">
+<meta property="og:image" content="https://ning2510.github.io/images/3.png">
+<meta property="og:image" content="https://ning2510.github.io/images/4.png">
+<meta property="og:image" content="https://ning2510.github.io/images/5.png">
+<meta property="og:image" content="https://ning2510.github.io/images/6.png">
+<meta property="og:image" content="https://ning2510.github.io/images/7.png">
+<meta property="og:image" content="https://ning2510.github.io/images/8.png">
+<meta property="og:image" content="https://ning2510.github.io/images/9.png">
+<meta property="og:image" content="https://ning2510.github.io/images/10.png">
+<meta property="og:image" content="https://ning2510.github.io/images/11.png">
+<meta property="og:image" content="https://ning2510.github.io/images/12.png">
+<meta property="og:image" content="https://ning2510.github.io/images/13.png">
+<meta property="og:updated_time" content="2019-10-29T11:00:01.460Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tarjan 求割点,桥(割边)">
 <meta name="twitter:description" content="简介: 割边和割点的定义 仅限于无向图 中。我们可以通过定义以蛮力方式求解出无向图的所有割点和割边, 但这样的求解方式效率低。Tarjan 提出了一种快速求解的方式，通过一次 DFS 就求解出图中所有的割点和割边">
-<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/image_hosting/9k4fknpl.png">
+<meta name="twitter:image" content="https://ning2510.github.io/images/1.png">
   <link rel="canonical" href="http://yoursite.com/2019/10/29/Tarjan-求割点-桥-割边/">
 
 
@@ -242,7 +242,7 @@
                 
               
 
-              <time title="Created: 2019-10-29 17:18:18 / Modified: 17:21:24" itemprop="dateCreated datePublished" datetime="2019-10-29T17:18:18+08:00">2019-10-29</time>
+              <time title="Created: 2019-10-29 17:18:18 / Modified: 19:00:01" itemprop="dateCreated datePublished" datetime="2019-10-29T17:18:18+08:00">2019-10-29</time>
             </span>
           
             
@@ -274,9 +274,9 @@
 <p><strong>我们先通过 DFS 定义两个概念</strong></p>
 <p>假设 DFS 中我们从 顶点U 访问到了 顶点V ( 此时 顶点V 还未被访问过 ), 那么我们称 顶点U  为 顶点V 的 <strong>父顶点</strong>，V 为 U 的 <strong>孩子顶点</strong>。在 顶点U 之前被访问过的顶点，我们就称之为 U 的 <strong>祖先顶点</strong></p>
 <p>显然如果 顶点U 的 <u><strong>所有孩子顶点</strong></u> 可以不通过 父顶点U 而访问到 U 的祖先顶点，那么说明此时去掉 顶点U 不影响图的连通性，U就不是割点。相反，<u><strong>如果 顶点U 至少存在一个孩子顶点</strong></u>，必须通过 父顶点U 才能访问到 U 的祖先顶点，那么去掉 顶点U 后，顶点U 的祖先顶点和孩子顶点就不连通了，说明 U 是一个<strong>割点</strong>。</p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/9k4fknpl.png" alt></p>
+<p><img src="https://ning2510.github.io/images/1.png" alt></p>
 <p><strong>上图中的箭头表示 DFS 访问的顺序（而不表示有向图），对于 顶点D 而言，D 的孩子顶点可以通过连通 区域1 红色的边回到 D 的祖先 顶点C（此时 C 已被访问过），所以此时 D 不是割点</strong></p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/esh55tms.png" alt></p>
+<p><img src="https://ning2510.github.io/images/2.png" alt></p>
 <p>上图中的连通 区域2 中的顶点，<u><strong>必须通过 D 才能访问到 D 的祖先顶点</strong></u>，所以说此时 D 为割点。再次强调一遍，<u><strong>箭头仅仅表示 DFS 的访问顺序</strong></u>，而不是表示该图是有向图。</p>
 <p>这里我们还需要考虑一个特殊情况，就是 DFS 的根顶点（一般情况下是编号为0的顶点），因为根顶点没有祖先顶点。其实根顶点是不是割点也很好判断，如果从根顶点出发，一次 DFS 就能访问到所有的顶点，那么根顶点就不是割点。反之，如果回溯到根顶点后，还有未访问过的顶点，需要在邻接顶点上再次进行 DFS，根顶点就是割点。 <strong><u>(简单来所就是若根顶点的有大于等于 2 个孩子,则根顶点就是割点)</u></strong></p>
 <h3 id="3-Tarjan算法的实现细节"><a href="#3-Tarjan算法的实现细节" class="headerlink" title="3. Tarjan算法的实现细节"></a>3. Tarjan算法的实现细节</h3><h4 id="1-DFN数组"><a href="#1-DFN数组" class="headerlink" title="1. DFN数组"></a>1. DFN数组</h4><blockquote>
@@ -306,39 +306,39 @@
 <p><strong>来看一个具体的例子 :</strong></p>
 <p><strong>模仿程序计算各个顶点的 DFN 值和 LOW 值。下图中 <u>蓝色实线箭头表示已访问过的路径，无箭头虚线表示未访问路径。已访问过的顶点用黄色标记，未访问的顶点用白色标记，DFS 当前正在处理的顶点用绿色表示。带箭头的蓝色虚线表示 DFS 回溯时的返回路径</u>。</strong></p>
 <p><strong>1.</strong></p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/dkupkca3.png" alt></p>
+<p><img src="https://ning2510.github.io/images/3.png" alt></p>
 <p>当 DFS 走到 顶点H 时，有三个分支，<strong>按照遍历顺序(总是先走编号小的节点), 先走 H-I，然后走 H-F，最后走 H-J</strong>, 从 H 访问 I 时，顶点I 未被访问过，所以I的 DFN 和 LOW 都为 9。根据 DFS 的遍历顺序，我们应该从顶点I继续访问。</p>
 <p><strong>2.</strong></p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/4uy6wfwa.png" alt></p>
+<p><img src="https://ning2510.github.io/images/4.png" alt></p>
 <p><strong>上图表示由 顶点I 访问 顶点D，而此时发现 D 已被访问，当从 D 回溯到 I 时，由于</strong></p>
 <p><strong>DFN[D] &lt; DFN[I]</strong></p>
 <p><strong>说明 D 是 I 的祖先顶点，所以到现在为止，顶点I 不经过 父顶点H 能访问到的小时间戳为 4</strong></p>
 <p><strong>3.</strong></p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/41rj0hj1.png" alt></p>
+<p><img src="https://ning2510.github.io/images/5.png" alt></p>
 <p><strong>根据 DFS 的原理，我们从 顶点I 回到 顶点H，显然到目前为止 顶点H 能访问到的最小时间戳也是 4（因为我们到现在为止只知道能从 H 可以通过 I 访问到 D ），所以 LOW[H] = 4</strong></p>
 <p><strong>4.</strong></p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/epfo9xsc.png" alt></p>
+<p><img src="https://ning2510.github.io/images/6.png" alt></p>
 <p><strong>现在我们继续执行 DFS，走 H-F 路径，发现 顶点F 已被访问且 DFN[F] &lt; DFN[H]，说明 F 是 H 的祖先顶点，但此时 顶点H 能访问的最早时间戳是 4，而 F 的时间戳是 6，依据 LOW 值定义 LOW[H] 仍然为 4</strong></p>
 <p><strong>5.</strong></p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/a0esog84.png" alt></p>
+<p><img src="https://ning2510.github.io/images/7.png" alt></p>
 <p><strong>最后我们走 H-J 路径，顶点J 未被访问过所以 DFN[J] = 10   LOW[J] = 10</strong></p>
 <p><strong>6.</strong></p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/ab1zybnp.png" alt></p>
+<p><img src="https://ning2510.github.io/images/8.png" alt></p>
 <p><strong>同理，由 DFS 访问 顶点B，DFN[J] &gt; DFN[B]，B为祖先顶点，顶点J 不经过 父顶点H 能访问到的最早时间戳就是 DFN[B]，即 LOW[J] = 2</strong></p>
 <p><strong>7.</strong></p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/zks1mvwi.png" alt></p>
+<p><img src="https://ning2510.github.io/images/9.png" alt></p>
 <p><strong>我们从 顶点J 回溯到 顶点H，显然到目前为止顶点H能访问到的最早时间戳就更新为 2（因为我们到现在为止知道了能从 H 访问到 J ），所以 LOW[H] = 2</strong></p>
 <p><strong>8.</strong></p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/glpr0yty.png" alt></p>
+<p><img src="https://ning2510.github.io/images/10.png" alt></p>
 <p><strong>根据 DFS 原理，我们从 H 回退到 顶点E（ H回退到G, G回退到F，F回退到E 的过程省略），所经过的顶点都会更新 LOW 值，因为这些顶点不用通过自己的父顶点就可以和 顶点B 相连。当回溯到 顶点E 时，还有未访问过的顶点，那么继续进行 E-K 分支的 DFS</strong></p>
 <p><strong>9.</strong></p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/7gmam1wf.png" alt></p>
+<p><img src="https://ning2510.github.io/images/11.png" alt></p>
 <p><strong>从 E-K 分支访问到 顶点L 时，顶点K 和 L 的 DFN值 和 LOW值 如上图所示</strong></p>
 <p><strong>10.</strong></p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/8c5skax7.png" alt></p>
+<p><img src="https://ning2510.github.io/images/12.png" alt></p>
 <p><strong>接着我们继续回溯到了 顶点D（中间过程有所省略），并更新 LOW[D]</strong></p>
 <p><strong>11.</strong></p>
-<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/n8to9hp4.png" alt></p>
+<p><img src="https://ning2510.github.io/images/13.png" alt></p>
 <p><strong>最后，按照 DFS 的原理，我们回退到 顶点A，并且求出来了每个顶点的 DFN值 和 LOW值</strong></p>
 <h4 id="4-割点-和-桥-割边-的判定方法"><a href="#4-割点-和-桥-割边-的判定方法" class="headerlink" title="4. 割点 和 桥(割边) 的判定方法"></a>4. 割点 和 桥(割边) 的判定方法</h4><ul>
 <li><strong>割点 :</strong> </li>

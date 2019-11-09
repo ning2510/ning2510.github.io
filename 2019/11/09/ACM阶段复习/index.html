@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 3.9.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.4.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.4.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.4.0" color="#222">
+  <link rel="alternate" href="/atom.xml" title="凉生" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css?v=7.4.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.4.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    back2top: {"enable":true,"sidebar":true,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Copy',
+      copy_success: 'Copied',
+      copy_failure: 'Copy failed'
+    },
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="C/C++ 循环输入C++ :">
+<meta name="keywords" content="Life isn&#39;t about waiting for the storm to pass, it&#39;s about learning to dance in the rain。生活不是等待暴风雨过去，而是要学会在雨中跳舞。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACM阶段复习">
+<meta property="og:url" content="http://yoursite.com/2019/11/09/ACM阶段复习/index.html">
+<meta property="og:site_name" content="凉生">
+<meta property="og:description" content="C/C++ 循环输入C++ :">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-11-09T10:34:49.730Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ACM阶段复习">
+<meta name="twitter:description" content="C/C++ 循环输入C++ :">
+  <link rel="canonical" href="http://yoursite.com/2019/11/09/ACM阶段复习/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>ACM阶段复习 | 凉生</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">凉生</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives<span class="badge">5</span></a>
+
+  </li>
+  </ul>
+
+</nav>
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/ning2510" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+            
+
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+      <article itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block post">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/09/ACM阶段复习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="凉生">
+      <meta itemprop="description" content="Just do it.">
+      <meta itemprop="image" content="/images/123.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="凉生">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">ACM阶段复习
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              
+                
+              
+
+              <time title="Created: 2019-11-09 18:31:32 / Modified: 18:34:49" itemprop="dateCreated datePublished" datetime="2019-11-09T18:31:32+08:00">2019-11-09</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="C-C-循环输入"><a href="#C-C-循环输入" class="headerlink" title="C/C++ 循环输入"></a>C/C++ 循环输入</h3><h4 id="C"><a href="#C" class="headerlink" title="C++ :"></a><strong>C++ :</strong></h4><a id="more"></a><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b;</span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/--------------------------/</span><br><span class="line">	<span class="built_in">cin</span> 是 C++ 的标准输入流，其本身是一个对象，并不存在返回值的概念。</span><br><span class="line"></span><br><span class="line">	不过经常会有类似于</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; a) 的调用，这里并不是 <span class="built_in">cin</span> 的返回值，而是 &gt;&gt; 操作重载函数</span><br><span class="line">istream&amp; <span class="keyword">operator</span>&gt;&gt;(istream&amp;, T &amp;);的返回值，其中第二个参数由<span class="built_in">cin</span>&gt;&gt;后续参数类型决定</span><br><span class="line"></span><br><span class="line">	其返回值类型为 istream&amp; 类型，大多数情况下其返回值为 <span class="built_in">cin</span> 本身（非 <span class="number">0</span> 值），只有当遇到 EOF 输入或者复制失败时时，返回值为 <span class="number">0</span></span><br><span class="line"></span><br><span class="line">/-------------------------/</span><br><span class="line">	<span class="built_in">cin</span> 是 C++ 编程语言中的标准输入流对象，即 istream 类的对象。<span class="built_in">cin</span> 主要用于从标准输入读取数据，这里的标准输入，指的是终端的键盘。</span><br><span class="line">	此外，<span class="built_in">cout</span> 是流的对象，即 ostream 类的对象</span><br><span class="line">	</span><br><span class="line">/-------------------------/</span><br><span class="line">	对象就是把 “类” 实例化 ，也类似于结构体变量的声明，它的创建格式是 类名+对象名，比如有一个已经定义的类 A ，可以这样把A实例化 A a ; a就是你创建的对象。只有创建了对象，类才能发挥作用。</span><br></pre></td></tr></table></figure>
+
+<h4 id="C语言"><a href="#C语言" class="headerlink" title="C语言 :"></a><strong>C语言 :</strong></h4><p>*<em>方法一 : *</em></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b;</span><br><span class="line"><span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b) != EOF) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/-------------------------/</span><br><span class="line">    </span><br><span class="line"><span class="number">1.</span> C 语言中 EOF 是什么意思？</span><br><span class="line"></span><br><span class="line">	（<span class="number">1</span>）EOF 是 end of file 的缩写，表示 <span class="string">"文字流"</span>（stream）的结尾。这里的 <span class="string">"文字流"</span> ，可以是文件（file），也可以是标准输入。该宏定义在 stdio.h 中。</span><br><span class="line"></span><br><span class="line">	（<span class="number">2</span>）EOF 不是特殊字符，而是一个定义在头文件 stdio.h 的常量，一般等于 <span class="number">-1</span></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">define</span> EOF (-1)</span></span><br><span class="line"></span><br><span class="line">	（<span class="number">3</span>）除了表示文件结尾，EOF 还可以表示标准输入的结尾。但是，标准输入与文件不一样，无法事先知道输入的长度，必须手动输入一个字符，表示到达 EOF。</span><br><span class="line"></span><br><span class="line">	（<span class="number">4</span>）在 <span class="keyword">while</span> 循环中以 EOF 作为文件结束标志，这种以 EOF 作为文件结束标志的文件，必须是文本文件。在文本文件中，数据都是以字符的 ASCII 代码值的形式存放。我们知道，ASCII 代码值的范围是 <span class="number">0</span>~<span class="number">127</span>，不可能出现<span class="number">-1</span>，因此可以用 EOF 作为文件结束标志。 当读一个文件读到文件最后时，读文件的函数(比如函数fgetc(FILE *fp))就会返回这个常量。比如常用函数<span class="built_in">scanf</span>()，返回成功读入的数据个数，如果没有任何数据被成功读入，则返回 EOF。</span><br><span class="line"></span><br><span class="line">/---------------------------/</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 头文件一般由四部分内容组成：</span><br><span class="line">	(<span class="number">1</span>) 头文件开头处的版权和版本声明；</span><br><span class="line">	(<span class="number">2</span>) 预处理块；</span><br><span class="line">	(<span class="number">3</span>) <span class="keyword">inline</span> 函数的定义；</span><br><span class="line">	(<span class="number">4</span>) 函数和类结构声明等。  ***</span><br><span class="line">	在头文件中，用 ifndef/define/endif 结构产生预处理块，用 <span class="meta">#<span class="meta-keyword">include</span> 格式来引用库的头文件。头文件的这种结构，是利用 C 语言进行开发软件所通常具备的，属于公有知识</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>方法二 :</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a, b;</span><br><span class="line"><span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b)) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/----------------------------/</span><br><span class="line">    <span class="number">-1</span> 的补码表示是: <span class="number">11111111</span></span><br><span class="line">    按位取反后是:   <span class="number">00000000</span>   (即为假)</span><br><span class="line">    其它输入情况下（无论是否输入成功） <span class="keyword">while</span>循环的判断条件为非<span class="number">0</span> 即为真</span><br><span class="line"></span><br><span class="line">/----------------------------/</span><br><span class="line">    </span><br><span class="line">	<span class="built_in">scanf</span>函数返回的是成功读入的个数</span><br><span class="line"></span><br><span class="line">	如果只有a被成功读入，返回值为<span class="number">1</span>；</span><br><span class="line"></span><br><span class="line">	如果a和b都未被成功读入，返回值为<span class="number">0</span>；</span><br><span class="line"></span><br><span class="line">	Windows下可以通过 Ctrl+z 或者 Ctrl+d 结束循环输入</span><br></pre></td></tr></table></figure>
+
+<h3 id="t-组样例输入"><a href="#t-组样例输入" class="headerlink" title="t 组样例输入"></a>t 组样例输入</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> t;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line"><span class="keyword">while</span>(t--) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="double下不能-直等"><a href="#double下不能-直等" class="headerlink" title="double下不能 直等"></a>double下不能 直等</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> a = <span class="number">5.3</span>;</span><br><span class="line"><span class="keyword">double</span> b = <span class="number">2.6</span> + <span class="number">2.7</span>;  <span class="comment">//相加时会丢失精度</span></span><br><span class="line"></span><br><span class="line">结果:	a != b</span><br><span class="line"></span><br><span class="line">        符号位  指数位  尾数位</span><br><span class="line"><span class="keyword">float</span>:    <span class="number">1</span>      <span class="number">8</span>     <span class="number">23</span>   (bit)</span><br><span class="line"><span class="keyword">double</span>:   <span class="number">1</span>      <span class="number">11</span>    <span class="number">52</span>   (bit)</span><br></pre></td></tr></table></figure>
+
+<h3 id="C-语言-double-类型的-printf-问题"><a href="#C-语言-double-类型的-printf-问题" class="headerlink" title="C 语言 double 类型的 printf 问题"></a>C 语言 double 类型的 printf 问题</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">结论：在C语言中，<span class="keyword">double</span> 类型的读入必须用 <span class="string">"%lf"</span> ；输出要用 <span class="string">"%f"</span> ,但是 <span class="string">"%lf"</span> 也不错</span><br><span class="line"></span><br><span class="line">解释：<span class="keyword">double</span> 和 <span class="keyword">float</span> 的精度是不同的，故存储空间也是不同的，所以如果要读入 <span class="keyword">double</span> 类型，必须要用 %lf 来读入，以免精度丢失。而输出，由于 <span class="built_in">printf</span> 中并无对 %lf 的严格定义，故使用 %lf 不一定会出现正确结果。那使用 %f 输出又如何呢？由于 C 语言中的默认参数提升规则，%f 输出的不论是 <span class="keyword">float</span> 还是 <span class="keyword">double</span> 都会被提升到双精度进行输出，并不会有精度丢失。</span><br></pre></td></tr></table></figure>
+
+<h3 id="最大公约数"><a href="#最大公约数" class="headerlink" title="最大公约数"></a>最大公约数</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 递归版</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b == <span class="number">0</span>) <span class="keyword">return</span> a;</span><br><span class="line">    <span class="keyword">return</span> gcd(b, a % b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"最大公约数是: "</span> &lt;&lt; gcd(a, b) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 循环版</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    <span class="keyword">int</span> r = a % b;</span><br><span class="line">    <span class="keyword">while</span>(r != <span class="number">0</span>) &#123;</span><br><span class="line">        a = b;</span><br><span class="line">        b = r;</span><br><span class="line">        r = a % b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"最大公约数是: "</span> &lt;&lt; b &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1.从a[1]开始存</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n - i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[j] &gt; a[j + <span class="number">1</span>]) swap(a[j], a[j + <span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.从a[0]开始存</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[j] &gt; a[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                <span class="keyword">int</span> t = a[j];</span><br><span class="line">                a[j] = a[j + <span class="number">1</span>];</span><br><span class="line">                a[j + <span class="number">1</span>] = t;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h3><p>$$<br>求\sqrt{x}<br>$$</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">double</span> l = <span class="number">0</span>, r = n;</span><br><span class="line">    <span class="keyword">while</span>(l &lt; r) &#123;</span><br><span class="line">        <span class="keyword">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">abs</span>(mid * mid - n) &lt;= <span class="number">1e-5</span>) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%.4lf\n"</span>, mid);</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(mid * mid &gt; n) r = mid;</span><br><span class="line">        <span class="keyword">else</span> l = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/Life-isn-t-about-waiting-for-the-storm-to-pass-it-s-about-learning-to-dance-in-the-rain。生活不是等待暴风雨过去，而是要学会在雨中跳舞。/" rel="tag"><i class="fa fa-tag"></i> Life isn't about waiting for the storm to pass, it's about learning to dance in the rain。生活不是等待暴风雨过去，而是要学会在雨中跳舞。</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/10/29/Tarjan-求割点-桥-割边/" rel="next" title="Tarjan 求割点,桥(割边)">
+                  <i class="fa fa-chevron-left"></i> Tarjan 求割点,桥(割边)
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
+        
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+        
+        
+        
+        
+      
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#C-C-循环输入"><span class="nav-number">1.</span> <span class="nav-text">C/C++ 循环输入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#C"><span class="nav-number">1.1.</span> <span class="nav-text">C++ :</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C语言"><span class="nav-number">1.2.</span> <span class="nav-text">C语言 :</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#t-组样例输入"><span class="nav-number">2.</span> <span class="nav-text">t 组样例输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#double下不能-直等"><span class="nav-number">3.</span> <span class="nav-text">double下不能 直等</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-语言-double-类型的-printf-问题"><span class="nav-number">4.</span> <span class="nav-text">C 语言 double 类型的 printf 问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最大公约数"><span class="nav-number">5.</span> <span class="nav-text">最大公约数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冒泡排序"><span class="nav-number">6.</span> <span class="nav-text">冒泡排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二分"><span class="nav-number">7.</span> <span class="nav-text">二分</span></a></li></ol></div>
+        
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+      src="/images/123.png"
+      alt="凉生">
+  <p class="site-author-name" itemprop="name">凉生</p>
+  <div class="site-description" itemprop="description">Just do it.</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">tags</span>
+        
+      </div>
+    
+  </nav>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/ning2510" title="GitHub &rarr; https://github.com/ning2510" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://www.luogu.org/" title="Luogu &rarr; https://www.luogu.org/" rel="noopener" target="_blank"><i class="fa fa-fw fa-globe"></i>Luogu</a>
+      </span>
+    
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">凉生</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.4.0</div>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+
+
+  <script src="/lib/anime.min.js?v=3.1.0"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.4.0"></script><script src="/js/motion.js?v=7.4.0"></script>
+<script src="/js/schemes/pisces.js?v=7.4.0"></script>
+
+<script src="/js/next-boot.js?v=7.4.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
